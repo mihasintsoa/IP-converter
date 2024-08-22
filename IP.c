@@ -6,12 +6,14 @@
 int main()
 {
     int choice ;
+    do{
     printf("enter you're choice:\n");
     printf("1: converting binary to decimal\n");
     printf ("2: directly enter a decimal number\n");
     printf ("3: enter an hexadecimal number\n");
     scanf ("%d",&choice);
     getchar();  //remove the \n when pressing the enter key
+    }while(choice != 1 || choice != 2 || choice !=3);
 
     if (choice == 2)
     {
