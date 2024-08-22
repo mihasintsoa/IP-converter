@@ -13,7 +13,7 @@ int main()
     printf ("3: enter an hexadecimal number\n");
     scanf ("%d",&choice);
     getchar();  //remove the \n when pressing the enter key
-    }while(choice != 1 || choice != 2 || choice !=3);
+    }while(choice < 1 || choice > 3);
 
     if (choice == 2)
     {
