@@ -1,3 +1,5 @@
 This code determine the network , the broadcast and the subnet address of a given IP address.
 This code also determine the maximum number of machine of each subnet
 For more iniformation, dive deeper in the code.
+
+In the simpleVersion directory is a simpler version of the CIDR C file
