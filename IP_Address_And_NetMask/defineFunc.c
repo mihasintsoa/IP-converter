@@ -57,7 +57,7 @@ void start()
 
         // we re-use the netMaskToAddress in the detNumOfMaxPC
        number_PC = detNumOfMaxPC(broadCast1,broadCast2, broadCast3, broadCast4, subNet1 ,subNet2, subNet3, subNet4);
-       printf("The number of max PC for each subNet(sous-réseau) is %d\n\n", number_PC);
+       printf("The number of max PC for each subNet(sous-rÃ©seau) is %d\n\n", number_PC);
 
 
        divide(byte1, byte2, byte3, byte4, netMask0);
@@ -358,7 +358,7 @@ void divide(int byte1, int byte2, int byte3,int byte4, int netMask)
     }
     number_of_subNet = 1;
 
-    for (i = 0; i < binaryCount; i++)
+    for (i = 0; i < binaryCount ; i++)
     {
         number_of_subNet = number_of_subNet * 2;
     }
@@ -367,7 +367,7 @@ void divide(int byte1, int byte2, int byte3,int byte4, int netMask)
 
     printf("\n The IP address %d.%d.%d.%d\n",byte1, byte2, byte3, byte4);
     printf("will be divide further by %d \n",n);
-    printf("\t\t\tthen the number of subNet(sous-réseau) is %d\n",number_of_subNet);
+    printf("\t\t\tthen the number of subNet(sous-rÃ©seau) is %d\n",number_of_subNet);
     printf("with %d as maximum PC for each subNet\n",number_PC);
 
     nTh_Subnet = 0;
@@ -377,19 +377,19 @@ void divide(int byte1, int byte2, int byte3,int byte4, int netMask)
     while ( nTh_Subnet < number_of_subNet)
     {
         if (nTh_Subnet >= 1)
-            printf ("\t[%d.%d.%d.%d[ -->\t", subNet1, subNet2, subNet3, subNet4);
+            printf ("\t[%d.%d.%d.%d] -->\t", subNet1, subNet2, subNet3, subNet4);
         subNet4 += temp_num_PC;
-        while (subNet4 >= 256)
+        while (subNet4 >= 255)
         {
             subNet3++;
             subNet4 -= 256;
         }
-        while (subNet3 >= 256)
+        while (subNet3 >= 255)
         {
             subNet2++;
             subNet3 -= 256;
         }
-        while (subNet2 >= 256)
+        while (subNet2 >= 255)
         {
             subNet1++;
             subNet2 -= 256;
@@ -397,5 +397,6 @@ void divide(int byte1, int byte2, int byte3,int byte4, int netMask)
         nTh_Subnet++;
         subNet4++;
         printf("[%d.%d.%d.%d]\n", subNet1, subNet2, subNet3, subNet4);
+        subNet4++;
     }
 }
